@@ -35,7 +35,7 @@ $students = getStudents();
                 Учет депозита учеников
                 </h1>
             </div>           
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Добавить ученика</button>
+                <a href="add_new_student.php" class="nav-link" id="remove">Добавить ученика</a>  
                 <a href="#" class="nav-link" id="remove">Удалить</a>    
         </div>
     </header>

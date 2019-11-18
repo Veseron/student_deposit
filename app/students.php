@@ -19,4 +19,19 @@ function getStudentById($student_id) {
     return $student;
 }
 
+function addNewStudent($student_id) {
+    global $connection;
+
+
+}
+
+function updateOne($student_id) {
+
+}
+
+function removeStudents($removingArray) {
+
+}
+
+
 ?>

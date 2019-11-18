@@ -31,7 +31,7 @@ $student_one = getStudentById($student_id);
                 Учет депозита учеников
                 </h1>
             </div>           
-                <a href="#" class="nav-link" id="add_one">Добавить ученика</a>
+                <a href="add_new_student.php" class="nav-link" id="add_one">Добавить ученика</a>
                 <a href="#" class="nav-link" id="remove">Удалить</a>    
         </div>
     </header>
@@ -44,8 +44,8 @@ $student_one = getStudentById($student_id);
         <thead>
         <tr>
             <th scope="col"><input type="checkbox" id="check_all"></th>
-            <th scope="col">Имя ученика: <?=$student_one['student_name']?></th>
-            <th scope="col">Текущий депозит: <?=$student_one['student_deposit']?></th>
+            <th scope="col">Имя ученика: </th>
+            <th scope="col">Текущий депозит: </th>
             <th scope="col" class="ref">#</th>
         </tr>
         </thead>
