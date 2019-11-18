@@ -1,21 +1,12 @@
-body {
-  height: 100hv;
-  margin: 0;
-  padding: 0;
-  background-color: #F0F0F0;
-  font-family: 'Sawarabi Gothic', sans-serif; }
+.warning {
+  background-color: #ff7a7a; }
 
-header {
-  background-color: #BC6B6B;
-  min-height: 5.5%; }
-  header .header-content {
-    display: flex;
-    justify-content: center;
-    padding: 15px; }
-    header .header-content h4 {
-      margin: 0;
-      color: #F0F0F0;
-      font-style: bold;
-      font-size: 105%; }
+header a {
+  color: white; }
+header a:hover {
+  color: #ededed; }
+
+main a {
+  color: black; }
 
 /*# sourceMappingURL=main.css.map */
