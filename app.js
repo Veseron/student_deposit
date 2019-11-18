@@ -12,4 +12,5 @@ $(document).ready(function() {
             this.checked = checked_status;
         });
     });
+
 });

@@ -17,8 +17,14 @@ $students = getStudents();
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css"> -->
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
 </head>
 <body>
 
@@ -29,11 +35,32 @@ $students = getStudents();
                 Учет депозита учеников
                 </h1>
             </div>           
-                <a href="#" class="nav-link" id="add_one">Добавить ученика</a>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Добавить ученика</button>
                 <a href="#" class="nav-link" id="remove">Удалить</a>    
         </div>
     </header>
-    
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+            
     <main>
     
     
@@ -54,22 +81,21 @@ $students = getStudents();
             <th scope="row"><input type="checkbox"></th>
                 <td><?=$student['student_name']?></td>
                 <td class='deposit'><?=$student['student_deposit']?></td>
-                <td><a href="/student/student.php?student_id=<?=$student['id']?>"">#</a></td>
+                <td><a href="/student.php?student_id=<?=$student['id']?>"">#</a></td>
             </tr>
             
         <?php endforeach; ?>
         </tbody>
     </table>
 
+    <div id="modal"></div>
+
     </main>
 
 
     <!-- jQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" type="text/javascript"></script> -->
     <!-- Js -->
     <script src="app.js"></script>
 

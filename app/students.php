@@ -10,4 +10,13 @@ function getStudents() {
     return $students;
 }
 
+function getStudentById($student_id) {
+    global $connection;
+
+    $sql_request = "SELECT * FROM deposit WHERE id= ".$student_id;
+    $result = mysqli_query($connection, $sql_request);
+    $student = mysqli_fetch_assoc($result);
+    return $student;
+}
+
 ?>
