@@ -1,3 +1,14 @@
+<?php
+include_once "app/db_connection.php";
+include_once "app/functions.php";
+
+global $connection;
+if (isset($_POST['student_name']) && isset($_POST['student_deposit'])) {
+    addNewStudent($_POST);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,14 +48,14 @@
 
     <div class="container">
         <div class="row justify-content-center">
-        <form>
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="student_name">Имя ученика:</label>
                 <input type="text" class="form-control" id="student_name" name="student_name" placeholder="Введите имя и фамилию ученика">
             </div>
             <div class="form-group">
                 <label for="student_deposit">Депозит:</label>
-                <input type="text" class="form-control" id="student_deposit" placeholder="Введите текущий депозит">
+                <input type="text" class="form-control" id="student_deposit" name="student_deposit" placeholder="Введите текущий депозит">
             </div>
             <button type="submit" class="btn btn-primary">Создать</button>
         </form>

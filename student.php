@@ -1,10 +1,12 @@
 <?php
-require_once "app/db_connetction.php";
-require_once "app/students.php";
+require_once "app/db_connection.php";
+require_once "app/functions.php";
 
 $student_id = $_GET['student_id'];
 
 $student_one = getStudentById($student_id);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +33,7 @@ $student_one = getStudentById($student_id);
                 Учет депозита учеников
                 </h1>
             </div>           
-                <a href="add_new_student.php" class="nav-link" id="add_one">Добавить ученика</a>
+                <a href="#" class="nav-link" id="update_one">Изменить</a>
                 <a href="#" class="nav-link" id="remove">Удалить</a>    
         </div>
     </header>
@@ -54,11 +56,11 @@ $student_one = getStudentById($student_id);
 
             <tr>
             <th scope="row"><input type="checkbox"></th>
-                <td><?=$student_one['student_name']?></td>
-                <td class='deposit'><?=$student_one['student_deposit']?></td>
+                <td id='name' contenteditable><?=$student_one['student_name']?></td>
+                <td id='deposit' contenteditable><?=$student_one['student_deposit']?></td>
                 <td><a href="/student/student.php?student_id=<?=$student['id']?>"">#</a></td>
             </tr>
-            
+            <p id='id' style=visible: hidden><?=$student_one['id']?></p>
 
         </tbody>
     </table>
@@ -75,6 +77,7 @@ $student_one = getStudentById($student_id);
     <script src="https://cdnjs.com/libraries/izimodal"></script>
     <!-- Js -->
     <script src="app.js"></script>
+    <script src="update.js"></script>
 
 </body>
 </html>

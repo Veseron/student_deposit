@@ -1,8 +1,10 @@
 <?php
-require_once "app/db_connetction.php";
-require_once "app/students.php";
+require_once "app/db_connection.php";
+require_once "app/functions.php";
 
 $students = getStudents();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +27,8 @@ $students = getStudents();
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 <body>
 
@@ -35,35 +39,12 @@ $students = getStudents();
                 Учет депозита учеников
                 </h1>
             </div>           
-                <a href="add_new_student.php" class="nav-link" id="remove">Добавить ученика</a>  
+                <a href="add_new_student.php" class="nav-link" id="add">Добавить ученика</a>  
                 <a href="#" class="nav-link" id="remove">Удалить</a>    
         </div>
     </header>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div>
-        </div>
-    </div>
-            
-    <main>
-    
-    
+         
+    <main>  
 
     <table class="table table-bordered">
         <thead>
@@ -78,7 +59,7 @@ $students = getStudents();
         <!-- Шаблон записи об ученике -->
         <?php foreach($students as $student):?>
             <tr>
-            <th scope="row"><input type="checkbox"></th>
+            <th scope="row"><input class="check" type="checkbox" id="<?=$student['id']?>"></th>
                 <td><?=$student['student_name']?></td>
                 <td class='deposit'><?=$student['student_deposit']?></td>
                 <td><a href="/student.php?student_id=<?=$student['id']?>"">#</a></td>
@@ -91,13 +72,20 @@ $students = getStudents();
     <div id="modal"></div>
 
     </main>
+    <footer class="navbar fixed-bottom navbar-sm navbar-dark bg-dark">
+        <div class="navbar-brand">Изменить депозит учеников:</div>
+        <div class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Сумма изменения" id="sum">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="confirm">Увеличить</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="confirm2">Уменьшить</button>
+        </div>
+        
+    </footer>
 
-
-    <!-- jQuery -->
-    
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" type="text/javascript"></script> -->
     <!-- Js -->
     <script src="app.js"></script>
+    <script src="remove.js"></script>
+    <script src="updateDeposit.js"></script>
 
 </body>
 </html>
