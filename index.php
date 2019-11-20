@@ -76,8 +76,8 @@ $students = getStudents();
         <div class="navbar-brand">Изменить депозит учеников:</div>
         <div class="form-inline">
             <input class="form-control mr-sm-2" type="text" placeholder="Сумма изменения" id="sum">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="confirm">Увеличить</button>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="confirm2">Уменьшить</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="increase">Увеличить</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="decrease">Уменьшить</button>
         </div>
         
     </footer>
